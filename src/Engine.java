@@ -11,11 +11,11 @@ public class Engine {
         this.shield = shield;
     }
 
-    public int IA(String[] piece, String Computer, String Adversary ) {
-        return this.IA(new MemoryAI(piece, Computer, Adversary));
+    public int playAI(String[] piece, String computer, String adversary) {
+        return this.playAI(new MemoryAI(piece, computer, adversary));
     }
 
-    public int IA(MemoryAI mem) {
+    public int playAI(MemoryAI mem) {
 
         mem.centerNotExist();
         attack.process(mem);

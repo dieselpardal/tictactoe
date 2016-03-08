@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GameBoard {
 
     static final String PIECE_IA = "O";
-    static final  String PIECE_HUMANO = "X";
+    static final  String PIECE_HUMAN = "X";
 
     private GameView gameView ;
     private Player player;
@@ -24,14 +24,14 @@ public class GameBoard {
         do {
             scoreBoard.reset();
             do {
-                gameView.View(scoreBoard);
+                gameView.view(scoreBoard);
                 if (player.next() == 2) {
-                    scoreBoard.setPiece(engine.IA(scoreBoard.getPieces(), PIECE_IA, PIECE_HUMANO), PIECE_IA);
+                    scoreBoard.setPiece(engine.playAI(scoreBoard.getPieces(), PIECE_IA, PIECE_HUMAN), PIECE_IA);
                 } else {
-                    scoreBoard.setPiece(player.Human(scoreBoard.getPieces(), PIECE_HUMANO, PIECE_IA), PIECE_HUMANO);
+                    scoreBoard.setPiece(player.playHuman(scoreBoard.getPieces(), PIECE_HUMAN, PIECE_IA), PIECE_HUMAN);
                 }
-            } while (!valid.Process(player, scoreBoard));
-            gameView.View(scoreBoard);
+            } while (!valid.process(player, scoreBoard));
+            gameView.view(scoreBoard);
             System.out.println("Again game? ( 0 = Exit    1= Yes) ");
         } while ( scanner.nextInt() != 0);
     }

@@ -27,7 +27,7 @@ public class EngineTest {
     public void shouldDefenserCenterIfEmptyBoard () {
 
         String[] piece = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        int result = engine.IA(piece, "O", "X");
+        int result = engine.playAI(piece, "O", "X");
         assertThat(result, is(5));
     }
 
@@ -35,7 +35,7 @@ public class EngineTest {
     public void shouldDefenserOneIfCenterBoard () {
 
         String[] piece = {"0", "1", "2", "3", "4", "X", "6", "7", "8", "9" };
-        int result = engine.IA(piece, "O", "X");
+        int result = engine.playAI(piece, "O", "X");
         assertThat(result, is(1));
     }
 
@@ -43,7 +43,7 @@ public class EngineTest {
     public void shouldShieldOneAndSevenIfDiagonalBoard () {
 
         String[] piece = {"0", "O", "2", "3", "4", "X", "6", "7", "8", "X" };
-        int result = engine.IA(piece, "O", "X");
+        int result = engine.playAI(piece, "O", "X");
         assertThat(result, is(6));
     }
 
@@ -51,7 +51,7 @@ public class EngineTest {
     public void shouldDefenserOneIfAdversaryTwoAndThreeBoard () {
 
         String[] piece = {"0", "1", "X", "X", "4", "O", "6", "7", "8", "9" };
-        int result = engine.IA(piece, "O", "X");
+        int result = engine.playAI(piece, "O", "X");
         assertThat(result, is(1));
     }
 
@@ -59,7 +59,7 @@ public class EngineTest {
     public void shouldPieceOneIfAttackBoard () {
 
         String[] piece = {"0", "1", "O", "O", "4", "X", "6", "7", "8", "9" };
-        int result = engine.IA(piece, "O", "X");
+        int result = engine.playAI(piece, "O", "X");
         assertThat(result, is(1));
     }
     @After

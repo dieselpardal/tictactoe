@@ -1,7 +1,7 @@
 public class ScoreBoard {
 
-    private final int PIECE = 10;
-    private String[] piece;
+    private final int SIZE_PIECE = 10;
+    private String[] pieces;
 
     public int player1;
     public int player2;
@@ -9,25 +9,25 @@ public class ScoreBoard {
     public ScoreBoard() {
         this.player1 = 0;
         this.player2 = 0;
-        this.piece = new String[PIECE];
+        this.pieces = new String[SIZE_PIECE];
 
     }
     public void setPiece(int piece, String bet) {
-        this.piece[piece] = bet;
+        this.pieces[piece] = bet;
     }
     public String getPiece(int piece) {
-        return this.piece[piece];
+        return this.pieces[piece];
     }
     public String[] getPieces() {
-        return this.piece;
+        return this.pieces;
     }
     public int getLengthPieces() {
-        return this.piece.length;
+        return this.pieces.length;
     }
     public void reset() {
 
-        for(int i =0; i < this.piece.length; i++) {
-            this.piece[i] = String.valueOf(i);
+        for(int piece =0; piece < this.pieces.length; piece++) {
+            this.pieces[piece] = String.valueOf(piece);
         }
     }
 }

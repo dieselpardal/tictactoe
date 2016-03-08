@@ -6,8 +6,8 @@ public class Defenser {
         {
             tableDefenser(mem);
             twoAdversary(mem);
-            TwoAdversaryOneComputers(mem);
-            HorseTwoAdversary(mem);
+            twoAdversaryOneComputers(mem);
+            horseTwoAdversary(mem);
         }
     }
     private void tableDefenser(MemoryAI mem) {
@@ -26,23 +26,23 @@ public class Defenser {
     }
     private void twoAdversary(MemoryAI mem) {
         int[] part = {1,3,7,9};
-        for(int step=0; step<part.length; step++)
-            mem.defenseTwoAdversary(part[3 - step], 5, part[step]);
-        for(int step=2; step<9; step+=2) {
-            mem.defenseTwoAdversary(1, 9, step);
-            mem.defenseTwoAdversary(3, 7, step);
+        for(int piece=0; piece<part.length; piece++)
+            mem.defenseTwoAdversary(part[3 - piece], 5, part[piece]);
+        for(int piece=2; piece<9; piece+=2) {
+            mem.defenseTwoAdversary(1, 9, piece);
+            mem.defenseTwoAdversary(3, 7, piece);
         }
     }
-    private void TwoAdversaryOneComputers(MemoryAI mem)
+    private void twoAdversaryOneComputers(MemoryAI mem)
     {
-        int [][] miniPiece = {{3,7,1},{1,9,3},{1,9,7},{3,7,9}};
-        for(int step=0; step<miniPiece.length; step++)
-            mem.defenseTwoAdversaryOneComputers(miniPiece[step][0], miniPiece[step][1], miniPiece[step][2]);
+        int [][] part = {{3,7,1},{1,9,3},{1,9,7},{3,7,9}};
+        for(int piece=0; piece<part.length; piece++)
+            mem.defenseTwoAdversaryOneComputers(part[piece][0], part[piece][1], part[piece][2]);
     }
-    private void HorseTwoAdversary(MemoryAI mem)
+    private void horseTwoAdversary(MemoryAI mem)
     {
-        int [][] miniPiece = {{1,2},{3,2},{1,4},{7,4},{3,6},{9,6},{9,8},{7,8}};
-        for(int step=0; step<miniPiece.length; step++)
-            mem.defenseTwoAdversary(miniPiece[step][0], 5, miniPiece[step][1]);
+        int [][] part = {{1,2},{3,2},{1,4},{7,4},{3,6},{9,6},{9,8},{7,8}};
+        for(int piece=0; piece<part.length; piece++)
+            mem.defenseTwoAdversary(part[piece][0], 5, part[piece][1]);
     }
 }

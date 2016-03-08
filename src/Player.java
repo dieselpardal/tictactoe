@@ -2,27 +2,27 @@ import java.util.Scanner;
 
 public class Player {
 
-    private int player;
+    private int play;
     public Player () {
-        this.player = 0;
+        this.play = 0;
     }
 
-    public int getPlayer() {
-        return this.player;
+    public int getPlay() {
+        return this.play;
     }
 
-    public int Human(String[] piece, String Iam, String Adversary )  {
+    public int playHuman(String[] pieces, String play, String adversary)  {
         int select = 0;
         do {
-            System.out.print("Player "+this.player+" enter a number: ");
+            System.out.print("Player "+this.play +" enter a number: ");
             Scanner scanner = new Scanner(System.in);
             select = scanner.nextInt();
-        } while (piece[select] == Iam || piece[select] == Adversary);
+        } while (pieces[select] == play || pieces[select] == adversary);
         return select;
     }
 
     public int next() {
-        this.player = this.player == 1 ? 2 : 1;
-       return  this.player;
+        this.play = this.play == 1 ? 2 : 1;
+       return  this.play;
     }
 }

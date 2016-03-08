@@ -28,7 +28,7 @@ public class ValidBoardTest {
         scoreBoard.setPiece(5, "X");
         scoreBoard.setPiece(9, "X");
 
-        assertThat(validBoard.Process(player, scoreBoard), is(true));
+        assertThat(validBoard.process(player, scoreBoard), is(true));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ValidBoardTest {
         scoreBoard.setPiece(5, "X");
         scoreBoard.setPiece(7, "X");
 
-        assertThat(validBoard.Process(player, scoreBoard), is(true));
+        assertThat(validBoard.process(player, scoreBoard), is(true));
     }
     @Test
     public void shouldProcessDiagonalLinesBoard() {
@@ -49,7 +49,7 @@ public class ValidBoardTest {
         scoreBoard.setPiece(2, "X");
         scoreBoard.setPiece(3, "X");
 
-        assertThat(validBoard.Process(player, scoreBoard), is(true));
+        assertThat(validBoard.process(player, scoreBoard), is(true));
     }
     public void shouldProcessDiagonalColsBoard() {
 
@@ -58,7 +58,7 @@ public class ValidBoardTest {
         scoreBoard.setPiece(4, "X");
         scoreBoard.setPiece(7, "X");
 
-        assertThat(validBoard.Process(player, scoreBoard), is(true));
+        assertThat(validBoard.process(player, scoreBoard), is(true));
     }
 
     @After

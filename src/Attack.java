@@ -10,9 +10,9 @@ public class Attack  {
     private void twoCumputers(MemoryAI mem){
         mem.attackOfTwoCumputers(1, 9, 5);
         mem.attackOfTwoCumputers(3, 7, 5);
-        int[] part = {1,3,7,9};
-        for (int step = 0; step < part.length; step++)
-            mem.attackOfTwoCumputers(part[3 - step], 5, part[step]);
+        int[] pieces = {1,3,7,9};
+        for (int piece = 0; piece < pieces.length; piece++)
+            mem.attackOfTwoCumputers(pieces[3 - piece], 5, pieces[piece]);
     }
     private void tableAttack(MemoryAI mem){
         int line = 0;
